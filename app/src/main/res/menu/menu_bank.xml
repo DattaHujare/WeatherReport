@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/view_details"
+        android:title="View Details"
+        />
+
+    <item
+        android:id="@+id/set_default"
+        android:title="Set as use"
+        />
+
+    <item
+        android:id="@+id/delete"
+        android:title="Delete"
+        />
+
+</menu>

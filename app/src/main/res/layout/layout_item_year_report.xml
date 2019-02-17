@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="30dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp">
+
+
+    <com.weather.metoffice.widget.CustomTextViewMedium
+        android:id="@+id/tvLoactionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        tools:text="UK" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="3dp"
+        android:layout_margin="10dp"
+        android:background="@color/white" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="30dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="4dp">
+
+            <com.weather.metoffice.widget.CustomTextViewMedium
+                android:id="@+id/tvMonthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp"
+                tools:text="May 1910" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_rainfall"
+            tools:ignore="ContentDescription" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="@string/rainfall"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:id="@+id/tvRainFall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="100 mm" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_temperature"
+            tools:ignore="ContentDescription" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="@string/max_temperature"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:id="@+id/tvMaxTemperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="10.20" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_temperature"
+            tools:ignore="ContentDescription" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:text="@string/min_temperature"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <com.weather.metoffice.widget.CustomTextViewRegular
+            android:id="@+id/tvMinTemperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="5.01" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

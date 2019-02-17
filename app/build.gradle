@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        useLibrary 'org.apache.http.legacy'
+        applicationId "com.weather.metoffice"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [onesignal_app_id               : "",
+                                onesignal_google_project_number: "REMOTE"]
+
+        multiDexEnabled true
+    }
+    buildTypes {
+
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://s3.eu-west-2.amazonaws.com/\"")
+//            buildConfigField("String", "BASE_URL", "\"http://192.168.1.118/\"")
+//          buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
+        }
+        release {
+            minifyEnabled false
+            buildConfigField("String", "BASE_URL", "\"https://s3.eu-west-2.amazonaws.com/\"")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
+    implementation "com.jakewharton:butterknife:$rootProject.butterknife"
+    implementation "com.google.android.gms:play-services-gcm:$rootProject.playServicesGcm"
+    implementation "com.google.android.gms:play-services-maps:$rootProject.playServicesMaps"
+    implementation "com.google.android.gms:play-services-location:$rootProject.playServicesLocation"
+    implementation "com.google.android.gms:play-services-places:$rootProject.playServicesPlaces"
+    implementation "com.google.maps.android:android-maps-utils:$rootProject.androidMapsUtils"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.okhttp:okhttp:$rootProject.okhttp"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.converterGson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.loggingInterceptor"
+    implementation "com.rengwuxian.materialedittext:library:$rootProject.materialedittextLibrary"
+    implementation "com.weiwangcn.betterspinner:library-material:$rootProject.betterspinnerLibrary"
+    implementation "com.onesignal:OneSignal:$rootProject.OneSignal"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.retrofit2Rxjava2Adapter"
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.j256.ormlite:ormlite-android:5.0'
+    implementation 'com.j256.ormlite:ormlite-core:5.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeCompiler"
+}
